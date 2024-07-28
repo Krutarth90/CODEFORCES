@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define flp(k,n)                            for(int i=k;i<n;i++)
+//#define flp(k,n)                            for(int i=k;i<n;i++)
+#define flp(k,n,i)                          for(int i=k;i<n;i++)
 #define flm(k,n)                            for(int j=n-1;j>=k;j--)
 #define YES                                 cout<<"YES\n"
 #define NO                                  cout<<"NO\n"
@@ -16,15 +17,7 @@ class solution
     public: 
     static void solve()
     {
-        int n;
-        cin>>n;
-        flp(2,(int)sqrt(n)+1)
-            if(n%i==0)
-            {
-                cout<<n/i<<" "<<n-n/i<<endl;
-                return;
-            }
-        cout<<1<<" "<<n-1<<endl;
+        
     }
 };
 
