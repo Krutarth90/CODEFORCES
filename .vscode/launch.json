@@ -1,24 +1,18 @@
 {
+    "version": "2.0.0",
     "configurations": [
-        {
-            "type": "java",
-            "name": "cf",
-            "request": "launch",
-            "mainClass": "cf",
-            "projectName": "codeforces_defad72d"
-        },
         {
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/codeforces/jspwTest.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/codeforces",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
+            "miDebuggerPath": "/usr/bin/gdb",  // Adjust this path based on your environment
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -32,6 +26,5 @@
                 }
             ]
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
