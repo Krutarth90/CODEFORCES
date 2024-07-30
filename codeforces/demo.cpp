@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-//#define flp(k,n)                            for(int i=k;i<n;i++)
-#define flp(k,n,i)                          for(int i=k;i<n;i++)
+#define flp(k,n)                            for(int i=k;i<n;i++)
 #define flm(k,n)                            for(int j=n-1;j>=k;j--)
 #define YES                                 cout<<"YES\n"
 #define NO                                  cout<<"NO\n"
@@ -10,6 +9,7 @@ using namespace std;
 #define pb                                  push_back
 #define ppb                                 pop_back
 #define NL                                  cout<<"\n"
+
 
 
 class solution
