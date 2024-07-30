@@ -24,7 +24,23 @@ class solution
     } 
     static void solve()
     {
-        
+        int c=0,k=0;
+        string s[9];
+        flp(0,9)
+        {
+            cin>>s[i];
+            s[i][c+k]++;
+            if(s[i][c+k]>'9')
+                s[i][c+k]='1';
+            c+=3;
+            if(c==9)
+            {
+                k++;
+                c=0;
+            }
+        }
+        flp(0,9)
+            cout<<s[i]<<endl;
     }
 };
 
