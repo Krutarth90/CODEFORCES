@@ -24,7 +24,13 @@ class solution
     } 
     static void solve()
     {
-        
+        int x,y,n;
+        cin>>x>>y>>n;
+        int a[]={ MOD(x), MOD(y), MOD(y-x), MOD(-x), MOD(-y), MOD(x-y)};
+        n--;
+        int ans=MOD(n%6);
+        ans=a[ans];
+        cout<<MOD(ans)<<endl;
     }
 };
 
