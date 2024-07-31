@@ -25,7 +25,22 @@ class solution
 
     static void solve()
     {
-        
+        int n;
+        cin>>n;
+        int a[n];
+        flp(0,n)
+            cin>>a[i];
+        int ans=0,s=0;
+        sort(a,a+n);
+        flp(0,n)
+        {
+            if(s<=a[i])
+            {
+                s+=a[i];
+                ans++;
+            }
+        }
+        cout<<ans<<endl;
     }
 };
 
