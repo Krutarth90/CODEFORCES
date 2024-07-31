@@ -25,7 +25,26 @@ class solution
 
     static void solve()
     {
-        
+        int n;
+        cin>>n;
+        vector<int> a,b;
+        flp(0,n)
+        {
+            int x;
+            cin>>x;
+            a.pb(x);
+            b.pb(x);
+        }
+        sort(b.begin(),b.end());
+        flp(0,n)
+        {
+            if(a[i]!=b[i] && (a[i]%b[0] || b[i]%b[0]))
+            {
+                NO;
+                return;
+            }
+        }
+        YES;
     }
 };
 
