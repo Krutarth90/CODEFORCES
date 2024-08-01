@@ -25,7 +25,33 @@ class solution
 
     static void solve()
     {
-        
+        int n,k;
+        cin>>n>>k; 
+        string s;
+        cin>>s;
+        int c=k,ans=0;
+        bool f=0;
+        flp(0,n)
+        {
+            if(s[i]=='0')
+                c++;
+            else
+            {
+                c=0;
+                f=1;
+            }
+            if(c>=2*k + 1 )
+            {
+                ans++;
+                c=k;
+            }
+        }
+        if(c>=k + 1 )
+        {
+            ans++;
+            c=k;
+        }
+        cout<<ans<<endl;
     }
 };
 
