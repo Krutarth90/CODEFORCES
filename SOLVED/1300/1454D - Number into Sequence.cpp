@@ -26,7 +26,9 @@ class solution
             {
                 prime.pb(i);
                 for(int j = i * i ; j<=l ; j+=i)
+                {
                     check[j]=0;
+                }
             }
         }
     }
@@ -41,7 +43,32 @@ class solution
 
     static void solve()
     {
-        
+        int n, m=0, value=-1 ;
+        cin>>n ;
+        int temp=n;
+        for(int i = 2; i * i <= n; i++)
+        {
+            int c=0;
+            while(n % i == 0)
+            {
+                c++;
+                n /= i;
+            }
+            if(c>m)
+            {
+                m=c ;
+                value=i ;
+            }
+        }
+        if(value == -1)
+        {
+            cout << 1 << endl << temp << endl;
+            return;
+        }
+        cout << m << endl ;
+        flp(0,m-1)
+            cout << value << ' ' ;
+        cout<< temp/(int)(pow(value, m-1)) << endl;
     }
 };
 
