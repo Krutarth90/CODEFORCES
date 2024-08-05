@@ -25,7 +25,29 @@ class solution
 
     static void solve()
     {
+        int n, g=0 ;
+        cin >> n ;
         
+        flp(0, n)
+        {
+            int x ;
+            cin >> x ;
+            g=__gcd(g,x) ;
+        }
+        if(g == 1)
+        {
+            cout << 1 << endl ;
+            return ;
+        }
+        int ans=2;
+        for (int i = 2 ; i * i <= g ; i++)
+        {
+            if(g % i == 0)
+                ans += 2;
+            if(i * i == g && (g % i == 0))
+                ans--;
+        }
+        cout << ans << endl;
     }
 };
 
@@ -34,7 +56,7 @@ signed main()
     ios_base::sync_with_stdio(false) ; 
     cin.tie(0) ;
     int TC=1 ;
-    cin>>TC ;
+    //cin>>TC ;
     while(TC--)
         solution::solve() ;
 }
