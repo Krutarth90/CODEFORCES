@@ -25,7 +25,12 @@ class solution
 
     static void solve()
     {
-        
+        int a, b, n, m;
+        cin >> a >> b >> n >> m ;
+        if( ( (a + b) >= (n + m) ) && min(a,b)>=m )
+            YES;
+        else
+            NO;
     }
 };
 
