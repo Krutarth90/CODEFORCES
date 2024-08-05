@@ -20,7 +20,7 @@ class solution
         vector<bool> check(l + 1, true);
         check[0]=0;
         check[1]=0;
-        for(int i = 2 ; i<=l ; i++)
+        for(int i = 2 ; i * i <=l ; i++)
         {
             if(check[i])
             {
@@ -29,6 +29,9 @@ class solution
                     check[j]=0;
             }
         }
+        for(int i=sqrt(l) + 1 ; i <=l ; i++)
+            if(check[i])
+                prime.pb(i);
     }
 
     static int MOD(int n)
