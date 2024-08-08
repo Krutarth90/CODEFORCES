@@ -44,7 +44,39 @@ class solution
 
     static void solve()
     {
-        
+        int n,k;
+        cin>>n>>k;
+        int a[n];
+        bool b[n]={0};
+        flp(0,n)
+        {
+            cin>>a[i];
+            if(i>1 && i<n-1)
+            {
+                if(a[i-1]>a[i-2] && a[i-1]>a[i])
+                {
+                    b[i-1]=1;
+                }
+            }
+        }
+        int pref[n];
+        pref[0]=0;
+        flp(1,n)
+        {
+            pref[i]=pref[i-1];
+            if(b[i])
+                pref[i]+=1;  
+        }
+        int ans=0,l=-1;
+        for(int i=1;i<=n-k;i++)
+        {
+            if(pref[i+k-2]-pref[i]>ans)
+            {
+                ans=pref[i+k-2]-pref[i];
+                l=i;
+            }
+        }
+        cout<<ans+1<<" "<<l+1<<endl;
     }
 };
 
