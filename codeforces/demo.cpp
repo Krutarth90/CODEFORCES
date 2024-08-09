@@ -44,25 +44,7 @@ class solution
 
     static void solve()
     {
-        int n;
-        cin>>n;
-        int a[n];
-        vector<int> v;;
-        flp(0,n)
-        {
-            cin>>a[i];
-            if(a[i]<i+1)
-                v.pb(i+1-a[i]);
-        }
-        int ans=0;
-        sort(v.begin(),v.end());
-
-        flp(0,v.size())
-        {
-            int index=upper_bound(v.begin(),v.end(),v[i]+1)-v.begin();
-            ans+=(v.size()-index);
-        } 
-        cout<<ans<<endl;
+        
     }
 };
 
