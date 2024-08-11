@@ -50,7 +50,30 @@ class solution
 
     static void solve()
     {
-        
+        int n;
+        cin>>n;
+        vector<pair<int,int>> a(n);
+        flp(0,n)
+            cin>>a[i].first;
+        flp(0,n)
+        {
+            int x;
+            cin>>x;
+            a[i].first-=x;
+            a[i].second=i+1;
+        }
+        sort(a.begin(),a.end(),comp);
+        int ans=1;
+        for(int i=n-2;i>-1;i--)
+        {
+            if(a[i].first!=a[n-1].first)
+                break;
+            ans++;
+        }
+        cout<<ans<<endl;
+        for(int i=n-1;i>n-1-ans;i--)
+            cout<<a[i].second<<" ";
+        NL;
     }
 };
 
