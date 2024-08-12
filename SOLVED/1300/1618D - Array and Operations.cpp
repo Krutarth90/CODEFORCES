@@ -50,7 +50,21 @@ class solution
 
     static void solve()
     {
+        int n,k,ans=0;
+        cin>>n>>k;
+        int a[n];
         
+        flp(0,n)
+            cin>>a[i];
+        sort(a,a+n);
+        int r=n-1;
+        flp(0,k)
+        {
+            ans+=(a[n-k-1-i]/a[n-1-i]);
+        }
+        for(int i=0;i<n-2*k;i++)
+            ans+=a[i];
+        cout<<ans<<endl;
     }
 };
 
