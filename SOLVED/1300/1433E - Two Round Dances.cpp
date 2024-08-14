@@ -59,7 +59,11 @@ class solution
     }
     static void solve()
     {
-        
+        int n;
+        cin>>n;
+        int ans=fact(n)/(fact(n/2)*fact(n/2));
+        ans*=pow(fact(n/2 - 1),2)/2;
+        cout<<ans<<endl;
     }
 };
 
@@ -68,7 +72,7 @@ signed main()
     ios_base::sync_with_stdio(false) ; 
     cin.tie(0) ;
     int TC=1 ;
-    cin>>TC ;
+    //cin>>TC ;
     while(TC--)
         solution::solve() ;
 }
