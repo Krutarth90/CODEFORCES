@@ -59,7 +59,19 @@ class solution
     }
     static void solve()
     {
-        
+        int n,d,ans=0;
+        cin>>n>>d;
+        vector<int>a(n);
+        flp(0,n)
+            cin>>a[i];
+        flp(0,n)
+        {
+            int j=upper_bound(a.begin(),a.end(),a[i]+d)-a.begin();
+            if(j-i<=2)
+                continue;
+            ans+=(j-i-1)*(j-i-2)/2;
+        }
+        cout<<ans<<endl;
     }
 };
 
@@ -68,7 +80,7 @@ signed main()
     ios_base::sync_with_stdio(false) ; 
     cin.tie(0) ;
     int TC=1 ;
-    cin>>TC ;
+    //cin>>TC ;
     while(TC--)
         solution::solve() ;
 }
