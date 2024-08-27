@@ -59,7 +59,50 @@ class solution
     }
     static void solve()
     {
-        
+        int n;
+        cin >> n;
+        vector<int> a[n];
+        vector<pair<int, int>> probableAnswer(n);
+        flp(0,n)
+        {
+            int k;
+            cin >> k;
+            probableAnswer[i].second = k;
+            for(int j = 0; j < k; j ++)
+            {
+                int x;
+                cin >> x;
+                a[i].pb(x);
+                if(j == 0)
+                    probableAnswer[i].first = x + 1;
+                else if(x >= probableAnswer[i].first + j)
+                    probableAnswer[i].first += x - (probableAnswer[i].first + j) + 1;
+            }
+        }
+        sort(probableAnswer.begin(), probableAnswer.end());
+        int ans = probableAnswer[ n - 1 ].first;
+        int l = probableAnswer[0].first - 1, r = ans;
+        while(l + 1 <r)
+        {
+            int m = (l + r) / 2;
+            int c = m;
+            bool f = 1;
+            for(int i = 0 ; i < n && f; i ++)
+            {
+                if(probableAnswer[i].first <= c)
+                    c+=probableAnswer[i].second;
+                else
+                    f=0;
+            }
+            if(f)
+            {
+                ans = min(ans, m);
+                r=m;
+            }
+            else
+                l = m; 
+        }
+        cout << ans << endl;
     }
 };
 
