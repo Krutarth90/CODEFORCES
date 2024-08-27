@@ -59,7 +59,27 @@ class solution
     }
     static void solve()
     {
-        
+        int n;
+        cin >> n;
+        vector<int> a[n];
+        int probableAnswer[n];
+        flp(0,n)
+        {
+            int k;
+            cin >> k;
+            for(int j = 0; j < k; j ++)
+            {
+                int x;
+                cin >> x;
+                a[i].pb(x);
+                if(j == 0)
+                    probableAnswer[i] = x + 1;
+                else if(a[i].back() >= probableAnswer[i] + j)
+                    probableAnswer[i] = a[i].back() - (probableAnswer[i] + j) + 1;
+            }
+            cout<< probableAnswer[i] << " ";
+        }
+        NL;
     }
 };
 
