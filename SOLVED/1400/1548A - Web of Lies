@@ -1,0 +1,106 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int                                 long long
+#define flp(k,n)                            for(int i=(int)k;i<(int)n;i++)
+#define flm(k,n)                            for(int j=(int)n-1;j>=(int)k;j--)
+#define YES                                 cout<<"YES\n"
+#define NO                                  cout<<"NO\n"
+#define endl                                "\n"
+#define pb                                  push_back
+#define ppb                                 pop_back
+#define NL                                  cout<<"\n"
+ 
+
+void solve()
+{
+    int n, m, c = 0;
+    cin >> n >> m;
+    map<int, pair<set<int>, int>> adj;
+    flp(0, m)
+    {
+        int u, v;
+        cin >> u >> v;
+        adj[u].first.insert(v);
+        if(adj[u].first.size() == 1)
+            adj[u].second = 0;
+        adj[v].first.insert(u);
+        if(adj[v].first.size() == 1)
+            adj[v].second = 0;
+        if(u > v)
+        {
+            adj[v].second ++;
+            if(adj[v].second == 1)
+                c ++;
+        }  
+        else    
+        {
+            adj[u].second ++;
+            if(adj[u].second == 1)
+                c ++;
+        }  
+    }
+    int q;
+    cin >> q;
+    while(q --)
+    {
+        int k;
+        cin >> k;
+        if(k == 3)
+        {
+            cout << n - c << endl;
+            continue;
+        }
+        if(k == 1)
+        {
+            int u, v;
+            cin >> u >> v;
+            adj[u].first.insert(v);
+            if(adj[u].first.size() == 1)
+                adj[u].second = 0;
+            adj[v].first.insert(u);
+            if(adj[v].first.size() == 1)
+                adj[v].second = 0;
+            if(u > v)
+            {
+                adj[v].second ++;
+                if(adj[v].second == 1)
+                    c ++;
+            }  
+            else    
+            {
+                adj[u].second ++;
+                if(adj[u].second == 1)
+                    c ++;
+            }  
+        }
+        else
+        {
+            int u, v;
+            cin >> u >> v;
+            if(u > v)
+            {
+                adj[v].second --;
+                if(!adj[v].second)
+                    c --;
+            }
+            else
+            {
+                adj[u].second --;
+                if(!adj[u].second)
+                    c --;
+            }
+        }
+    }
+}
+
+
+
+signed main() 
+{
+    ios_base::sync_with_stdio(false) ; 
+    cin.tie(0) ;
+    int TC = 1 ;
+    //cin >> TC ;
+    while(TC--)
+        solve() ;
+}
