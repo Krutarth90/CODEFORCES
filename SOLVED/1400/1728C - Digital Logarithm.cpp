@@ -11,6 +11,7 @@ using namespace std;
 #define NL                                  cout<<"\n"
 #define SPACE                               << " " << 
 
+// HARD SOLUTION
 void solve()
 {
     int n, ans = 0;
@@ -133,6 +134,51 @@ void solve()
     
 }
 
+//EASY SOLUTION
+void solve2()
+{
+    int n, ans = 0;
+    cin >> n;
+    priority_queue<int> a, b;
+    flp(0, n)
+    {
+        int x;
+        cin >> x;
+        a.push(x);
+    }
+
+    flp(0, n)
+    {
+        int x;
+        cin >> x;
+        b.push(x);
+    }
+    
+    while(a.size())
+    {
+        if(a.top() == b.top())
+        {
+            a.pop();
+            b.pop();
+            continue;
+        }
+        
+        ans ++;
+
+        if(a.top() > b.top())
+        {
+            a.push(log10(a.top()) + 1);
+            a.pop();
+        }
+        else
+        {
+            b.push(log10(b.top()) + 1);
+            b.pop();
+        }
+    }
+    
+    cout << ans << endl;
+}
 
 
 signed main() 
