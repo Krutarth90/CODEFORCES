@@ -1,0 +1,79 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define flp(k,n)                            for(ll i=(ll)k;i<(ll)n;i++)
+#define flm(k,n)                            for(ll j=(ll)n-1;j>=(ll)k;j--)
+#define YES                                 cout<<"YES\n"
+#define NO                                  cout<<"NO\n"
+#define endl                                "\n"
+#define pb                                  push_back
+#define ppb                                 pop_back
+#define NL                                  cout<<"\n"
+#define SPACE                               << " " << 
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds; 
+  
+template <typename T>
+using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+ll mod(ll x)
+{
+    return x % ((ll)1e9 + 7);
+}
+
+
+
+void solve()
+{
+    ll n, k, z = 0;
+    cin >> n >> k;
+    string s;
+    cin >> s;
+    flp(0, n)
+        if (s[i] == '0')
+            z++;
+    ll o = n - z;
+    ll max_pairs = (z / 2) + (o / 2);
+    if (k > n / 2 || k > max_pairs)
+    {   
+        NO;
+        return;
+    }
+    if(z > o)
+        swap(z, o);
+    while(k && o > max(1ll, z))    
+    {
+        k --;
+        o -= 2;
+    }
+    while(k)
+    {
+        k --;
+        if(o >= z)
+            o -= 2;
+        else
+            z -= 2;
+    }
+    if(o == z)
+    {
+        YES;
+    }
+    else
+    {
+        NO;
+    }
+}
+
+
+
+signed main() 
+{
+    ios_base::sync_with_stdio(false) ; 
+    cin.tie(0) ;
+    int TC = 1 ;
+    cin >> TC ;
+    while(TC--)
+        solve() ;
+}
