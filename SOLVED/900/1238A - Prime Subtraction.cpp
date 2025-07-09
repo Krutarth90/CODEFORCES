@@ -25,7 +25,7 @@ ll mod(ll x)
 
 void solve()
 {
-    int x, y;
+    long long x, y;
     cin >> x >> y;
     
     if (x - y > 1)
