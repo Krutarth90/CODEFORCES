@@ -44,7 +44,12 @@ void solve()
                 continue;
             }
             if(j == n - 1)
-                cout << "L";
+            {
+                if(i == n - 1)
+                    cout << "L";
+                else
+                    cout << "D";
+            }  
             else
                 cout << "R";
         }
