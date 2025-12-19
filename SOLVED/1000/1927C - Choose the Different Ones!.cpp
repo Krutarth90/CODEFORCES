@@ -35,14 +35,16 @@ void solve()
 	{
 		ll x;
 		cin >> x;
-		freq1[x] = true;
+		if(x <= k && x > 0)
+			freq1[x] = true;
 	}
 
 	flp(0, m)
 	{
 		ll x;
 		cin >> x;
-		freq2[x] = true;
+		if(x <= k && x > 0)
+			freq2[x] = true;
 	}
 	ll a = 0, b = 0, both = 0; 
 	flp(1, k + 1)
