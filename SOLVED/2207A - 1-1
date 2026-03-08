@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std; 
+#define ll long long
+#define rep(i, n) for (ll i = 0; i < (n); i++)
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+#define pb push_back
+void fast_io()
+{
+    ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+}
+void print(vector<ll> & a)
+{
+	for (ll & i : a) cout<<i<<" ";
+	cout<<"\n";
+}   
+void solve()
+{
+    ll n;
+    cin>>n;
+    string s;
+    cin>>s;
+    ll cnt=0;
+    for(ll i=1;i<n-1;i++)if(s[i-1]=='1' && s[i+1]=='1')s[i]='1';
+    for(auto it:s)cnt+=it=='1';
+    ll mini=0;
+    for(ll i=0,j=0;i<n;i=j){
+        while(j<n && s[j]==s[i])j++;
+        if(s[i]=='1')mini+=1+(j-i)/2;
+    }
+     cout<<mini<<" "<<cnt<<endl;
+}
+int main()
+{
+    fast_io();
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+
+    return 0;
+}
